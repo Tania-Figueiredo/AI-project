@@ -3,33 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FreshStart Dev – AI Travel Buddy</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
-    <link href="src/style.css" rel="stylesheet" type="text/css" />
-    <title>FreshStart Dev - AI Travel Buddy</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
-  <body>
-    <script src="src/index.js"></script>
 
-    <footer>
-      <p>
-        This project was coded by
-        <a
-          href="https://github.com/Tania-Figueiredo/Tania-Figueiredo"
-          target="_blank"
-          >Tânia Figueiredo</a
-        >, is
-        <a href="https://github.com/Tania-Figueiredo/AI-project" target="_blank"
-          >open-sourced on GitHub</a
-        >
-        and
-        <a href="https://plusaiproject.netlify.app/" target="_blank"
-          >hosted on Netlify</a
-        >.
-      </p>
-    </footer>
+  <body>
+    <img src="img/logo.png" alt="FreshStart Dev logo" class="logo-fixed" />
+
+    <div class="container">
+      <header>
+        <h1>Find Your Perfect Travel Spot</h1>
+      </header>
+
+      <div class="form-box">
+        <form class="search-form">
+          <input
+            type="search"
+            id="search"
+            placeholder="What kind of trip are you dreaming of?"
+            required
+            minlength="2"
+          />
+          <input type="submit" value="Ask AI" />
+        </form>
+        <p class="subheading">
+          Try: ‘romantic escape’, ‘mountain hiking’, or ‘somewhere peaceful and
+          sunny’.
+        </p>
+      </div>
+
+      <!-- Caixa onde será mostrada a resposta da API -->
+      <div id="response" class="response-box"></div>
+
+      <footer>
+        <p>
+          This project was coded and designed by
+          <a href="https://github.com/Tania-Figueiredo" target="_blank"
+            >Tânia Figueiredo</a
+          >, is
+          <a
+            href="https://github.com/Tania-Figueiredo/AI-project"
+            target="_blank"
+            >open-sourced on GitHub</a
+          >
+          and
+          <a href="https://plusaiproject.netlify.app/" target="_blank"
+            >hosted on Netlify</a
+          >.
+        </p>
+      </footer>
+    </div>
+
+    <script src="src/index.js"></script>
   </body>
 </html>

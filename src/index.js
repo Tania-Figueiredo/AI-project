@@ -1,16 +1,21 @@
-function showJoke(response) {
-  let jokeElement = document.querySelector("#joke");
-  jokeElement.innerHTML = response.data.answer;
-}
+function getDestination(event) {
+  event.preventDefault();
 
-function getJoke() {
+  let input = document.querySelector("#search");
+  let promptText = input.value;
+
   let apiKey = "9f54b409ed45da3co73e59fb34ea8t3b";
-  let context = "Be funny and friendly";
-  let promptText = "Tell me a joke?";
-  let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${promptText}&context=${context}&key=${apiKey}`;
+  let context =
+    "You are a helpful travel assistant. Give a short answer, with travel spots. ";
+  let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(
+    promptText
+  )}&context=${encodeURIComponent(context)}&key=${apiKey}`;
 
-  axios.get(apiUrl).then(showJoke);
+  axios.get(apiUrl).then(function (response) {
+    let responseBox = document.querySelector("#response");
+    responseBox.innerHTML = response.data.answer;
+  });
 }
 
-let element = document.querySelector("#joke-button");
-element.addEventListener("click", getJoke);
+let form = document.querySelector(".search-form");
+form.addEventListener("submit", getDestination);
