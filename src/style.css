@@ -99,6 +99,7 @@ h1 {
   color: #2a2a2a;
   text-align: left;
   line-height: 1.6;
+  display: none;
 }
 
 footer {
